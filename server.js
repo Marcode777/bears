@@ -3,6 +3,11 @@
 var express = require('express'); // call express
 var app = express(); // define our app using express
 var bodyParser = require('body-parser'); // configure app to use body-parser
+var mongoose  = require('mongoose');
+
+// this connects to our database
+// keep in mind the code after mongoose.connect is demo code, so this code must changed to use our own database
+mongoose.connect('mongodb://node:node@novus.modulusmongo.net:27017/Iganiq8o'); // connect to our databa
 
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({extended: true}));
@@ -27,6 +32,8 @@ app.use('/api', router)
 //START THE SERVER
 app.listen(port);
 console.log("The Magic happens on port" + port);
+
+
 
 
 
